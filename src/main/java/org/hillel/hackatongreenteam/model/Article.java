@@ -2,6 +2,8 @@ package org.hillel.hackatongreenteam.model;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -11,6 +13,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "articles")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Article {
 
     @Id
@@ -38,6 +41,11 @@ public class Article {
     @ManyToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "category_id")
     private Category category;
+
+    @PrePersist
+    protected void onCreate() {
+        dateCreated = new Date();
+    }
 
     public int getId() {
         return id;

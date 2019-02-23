@@ -17,7 +17,7 @@ public class ArticleController {
         this.articleService = articleService;
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public RestResponse getOne(@PathVariable("id") int id) {
         RestResponse response = new RestResponse();
 
@@ -29,6 +29,14 @@ public class ArticleController {
             response.setStatus(200);
             response.setData(article);
         }
+
+        return response;
+    }
+    @GetMapping
+    public RestResponse getAll() {
+        RestResponse response = new RestResponse();
+        response.setStatus(200);
+        response.setData(articleService.readAll());
 
         return response;
     }

@@ -21,7 +21,7 @@ public class CategoryController {
         this.categoryRepository = categoryRepository;
     }
 
-    @PostMapping(value = "/add")
+    @PostMapping
     public RestResponse create(@RequestBody Category category) {
         RestResponse response = new RestResponse();
         response.setStatus(201);
