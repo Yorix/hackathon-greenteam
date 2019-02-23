@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/category")
 public class CategoryController {
 
-    @Autowired
     private final CategoryRepository categoryRepository;
 
+    @Autowired
     public CategoryController(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }

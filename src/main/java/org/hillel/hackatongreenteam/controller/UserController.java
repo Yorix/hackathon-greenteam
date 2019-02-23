@@ -8,12 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UserController {
 
-    @Autowired
     private final UserRepository userRepository;
 
+    @Autowired
     public UserController(UserRepository userRepository) {
 
         this.userRepository = userRepository;
