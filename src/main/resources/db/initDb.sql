@@ -1,0 +1,3 @@
+CREATE USER IF NOT EXISTS 'usr'@'localhost' IDENTIFIED BY 'pw';
+# GRANT ALL PRIVILEGES ON *.* TO 'sa'@'localhost';
+# FLUSH PRIVILEGES;
