@@ -1,11 +1,11 @@
-package garbage.controllers;
+package org.hillel.hackatongreenteam.controller;
 
+import org.hillel.hackatongreenteam.model.User;
+import org.hillel.hackatongreenteam.repository.UserRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDateTime;
 
 @Controller
 @RequestMapping("/")
@@ -32,14 +32,14 @@ public class UserController {
     }
 
     @PutMapping("{id}")
-    public User update(@PathVariable ("id") User userFromDB,
-                          @RequestBody User user) {
+    public User update(@PathVariable("id") User userFromDB,
+                       @RequestBody User user) {
         BeanUtils.copyProperties(user, userFromDB, "id");
         return userRepository.save(userFromDB);
     }
 
     @DeleteMapping("{id}")
-    public void delete(@PathVariable ("id") User user) {
+    public void delete(@PathVariable("id") User user) {
         userRepository.delete(user);
     }
 }

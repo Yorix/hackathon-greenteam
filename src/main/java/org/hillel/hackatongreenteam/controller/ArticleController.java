@@ -1,24 +1,21 @@
-package garbage.controllers;
+package org.hillel.hackatongreenteam.controller;
 
-import com.fasterxml.jackson.annotation.JsonView;
+import org.hillel.hackatongreenteam.model.Article;
+import org.hillel.hackatongreenteam.service.ArticleService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 @Controller
 @RequestMapping("/")
 public class ArticleController {
 
     @Autowired
-    private final ArticleRepository articleRepository;
+    private final ArticleService articleService;
 
-    public ArticleController(ArticleRepository articleRepository) {
-
-        this.articleRepository = articleRepository;
+    public ArticleController(ArticleService articleService) {
+        this.articleService = articleService;
     }
 
     //@GetMapping
@@ -28,26 +25,25 @@ public class ArticleController {
     }*/
 
     @GetMapping("{id}")
-    public Article getOne(@PathVariable("id") Article article) {
-        return article;
+    public Article getOne(@PathVariable("id") int id) {
+        return articleService.read(id);
     }
 
 
     @PostMapping
     public Article create(@RequestBody Article article) {
-        article.setCreationDate(LocalDateTime.now());
-        return articleRepository.save(article);
+        return articleService.create(article);
     }
 
     @PutMapping("{id}")
-    public Article update(@PathVariable ("id") Article articleFromDB,
+    public Article update(@PathVariable("id") Article articleFromDB,
                           @RequestBody Article article) {
         BeanUtils.copyProperties(article, articleFromDB, "id");
-        return articleRepository.save(articleFromDB);
+        return articleService.update(articleFromDB);
     }
 
     @DeleteMapping("{id}")
-    public void delete(@PathVariable ("id") Article article) {
-        articleRepository.delete(article);
+    public void delete(@PathVariable("id") int id) {
+        articleService.delete(id);
     }
 }

@@ -1,16 +1,16 @@
 package org.hillel.hackatongreenteam.model;
 
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
+
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
  * Created by User on 23.02.2019.
  */
 @Entity
-@Table(name="articles")
+@Table(name = "articles")
 public class Article {
 
     @Id
@@ -30,13 +30,13 @@ public class Article {
     @Column(name = "content")
     private String content;
 
-    @Nullable
+//    @Nullable
     @Column(name = "image_filename")
     private String imageFilename;
 
     @NotNull
     @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name="category_id")
+    @JoinColumn(name = "category_id")
     private Category category;
 
     public int getId() {

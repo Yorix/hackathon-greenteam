@@ -2,6 +2,7 @@ package org.hillel.hackatongreenteam.service;
 
 
 import org.hillel.hackatongreenteam.model.Article;
+import org.hillel.hackatongreenteam.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,35 +10,35 @@ import java.util.List;
 
 @Service
 public class ArticleServiceImpl implements ArticleService{
-    private ArticleDao articleDao;
+    private ArticleRepository articleRepository;
 
     @Autowired
-    public ArticleServiceImpl(ArticleDao articleDao) {
-        this.articleDao = articleDao;
+    public ArticleServiceImpl(ArticleRepository articleRepository) {
+        this.articleRepository = articleRepository;
     }
 
     @Override
-    public void create(Article article) {
-        articleDao.create(article);
+    public Article create(Article article) {
+        return articleRepository.save(article);
     }
 
     @Override
     public Article read(int id) {
-        return articleDao.read(id);
+        return articleRepository.getOne(id);
     }
 
     @Override
     public List<Article> readAll() {
-        return articleDao.readAll();
+        return articleRepository.findAll();
     }
 
     @Override
     public Article update(Article article) {
-        return articleDao.update(article);
+        return articleRepository.save(article);
     }
 
     @Override
     public void delete(int id) {
-        articleDao.delete(id);
+//        articleRepository.delete(id);
     }
 }

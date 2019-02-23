@@ -1,16 +1,17 @@
 package org.hillel.hackatongreenteam.service;
 
-import org.hillel.hackatongreenteam.entity.Comment;
+import org.hillel.hackatongreenteam.model.Comment;
+import org.hillel.hackatongreenteam.repository.CommentRepository;
 
 import java.util.List;
 
 public class CommentServiceImpl implements CommentService {
 
-    CommentDao commentDao;
+    CommentRepository commentDao;
 
     @Override
-    public void create(Comment comment) {
-
+    public Comment create(Comment comment) {
+        return null;
     }
 
     @Override

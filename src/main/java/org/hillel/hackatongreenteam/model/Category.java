@@ -1,8 +1,7 @@
 package org.hillel.hackatongreenteam.model;
 
-import com.sun.istack.internal.NotNull;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by User on 23.02.2019.

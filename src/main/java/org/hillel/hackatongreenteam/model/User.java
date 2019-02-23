@@ -1,15 +1,13 @@
 package org.hillel.hackatongreenteam.model;
 
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by User on 23.02.2019.
  */
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User {
 
     @Id
@@ -29,7 +27,7 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Nullable
+    //    @Nullable
     @Column(name = "avatar_picture_filename")
     private String avatarPictureFilename;
 

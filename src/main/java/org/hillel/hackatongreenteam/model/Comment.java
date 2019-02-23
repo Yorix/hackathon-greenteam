@@ -1,9 +1,7 @@
 package org.hillel.hackatongreenteam.model;
 
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -28,12 +26,12 @@ public class Comment {
 
     @NotNull
     @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name="article_id")
+    @JoinColumn(name = "article_id")
     private Article article;
 
-    @Nullable
+    //    @Nullable
     @ManyToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name="parent_comment_id")
+    @JoinColumn(name = "parent_comment_id")
     private Comment parentComment;
 
     public int getId() {

@@ -6,7 +6,7 @@ import org.hillel.hackatongreenteam.model.Article;
 import java.util.List;
 
 public interface ArticleService {
-    void create(Article article);
+    Article create(Article article);
 
     Article read(int id);
 
