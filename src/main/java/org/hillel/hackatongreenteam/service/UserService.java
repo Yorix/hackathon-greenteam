@@ -7,13 +7,18 @@ import java.util.List;
 
 public interface UserService {
 
-    User create(User user);
+    User save(User user);
 
     User read(int id);
 
     List<User> readAll();
 
-    User update(User user);
-
     void delete(int id);
+
+    User getCurrentUser();
+
+    User findUserByUsername(String username);
+
+    boolean checkPassword(User user, String password);
+
 }

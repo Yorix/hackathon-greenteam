@@ -27,9 +27,12 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    //    @Nullable
     @Column(name = "avatar_picture_filename")
     private String avatarPictureFilename;
+
+    @NotNull
+    @Column(name = "is_admin")
+    private boolean isAdmin;
 
     public int getId() {
         return id;
@@ -69,5 +72,13 @@ public class User {
 
     public void setAvatarPictureFilename(String avatarPictureFilename) {
         this.avatarPictureFilename = avatarPictureFilename;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 }

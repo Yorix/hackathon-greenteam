@@ -11,6 +11,19 @@ public class RestResponse{
 
     private Object data;
 
+    public RestResponse() {}
+
+    public RestResponse(int status, String message){
+        this.status = status;
+        this.message = message;
+    }
+
+    public RestResponse(int status, String message, Object data){
+        this.status  = status;
+        this.message = message;
+        this.data    = data;
+    }
+
     public int getStatus() {
         return status;
     }
