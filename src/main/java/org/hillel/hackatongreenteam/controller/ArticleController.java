@@ -18,28 +18,44 @@ public class ArticleController {
         this.articleService = articleService;
     }
 
-    //@GetMapping
-    /*@JsonView(Views.IdName.class)
-    public List<Message> list() {
-        return messageRepository.findAll();
-    }*/
-
     @GetMapping("{id}")
-    public Article getOne(@PathVariable("id") int id) {
-        return articleService.read(id);
+    public RestResponse getOne(@PathVariable("id") int id) {
+        RestResponse response = new RestResponse();
+
+        Article article = articleService.read(id);
+        if (article == null){
+            response.setStatus(404);
+            response.setMessage(String.format("Category %d not found", id));
+        } else {
+            response.setStatus(200);
+            response.setData(article);
+        }
+
+        return response;
     }
 
 
     @PostMapping
-    public Article create(@RequestBody Article article) {
-        return articleService.create(article);
+    public RestResponse create(@RequestBody Article article) {
+        RestResponse response = new RestResponse();
+        response.setStatus(201);
+        response.setMessage("A new article has created");
+        response.setData(articleService.save(article));
+
+        return response;
     }
 
     @PutMapping("{id}")
-    public Article update(@PathVariable("id") Article articleFromDB,
+    public RestResponse update(@PathVariable("id") Article articleFromDB,
                           @RequestBody Article article) {
         BeanUtils.copyProperties(article, articleFromDB, "id");
-        return articleService.update(articleFromDB);
+
+        RestResponse response = new RestResponse();
+        response.setStatus(200);
+        response.setMessage("The article has updated");
+        response.setData(articleService.save(articleFromDB));
+
+        return response;
     }
 
     @DeleteMapping("{id}")

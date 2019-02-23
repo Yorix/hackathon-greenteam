@@ -18,11 +18,6 @@ public class ArticleServiceImpl implements ArticleService{
     }
 
     @Override
-    public Article create(Article article) {
-        return articleRepository.save(article);
-    }
-
-    @Override
     public Article read(int id) {
         return articleRepository.getOne(id);
     }
@@ -33,7 +28,7 @@ public class ArticleServiceImpl implements ArticleService{
     }
 
     @Override
-    public Article update(Article article) {
+    public Article save(Article article) {
         return articleRepository.save(article);
     }
 
