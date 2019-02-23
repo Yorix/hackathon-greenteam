@@ -1,14 +1,10 @@
 package org.hillel.hackatongreenteam.controller;
 
 import org.hillel.hackatongreenteam.model.Category;
-import org.hillel.hackatongreenteam.model.User;
 import org.hillel.hackatongreenteam.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/category", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -30,6 +26,7 @@ public class CategoryController {
 
         return response;
     }
+
     @GetMapping
     public RestResponse list() {
         RestResponse response = new RestResponse();

@@ -11,13 +11,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    public void setUserRepository(UserRepository userRepository){
+    public void setUserRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public void delete(int id) {
         User user = userRepository.getOne(id);
-        if (user != null){
+        if (user != null) {
             userRepository.delete(user);
         }
     }

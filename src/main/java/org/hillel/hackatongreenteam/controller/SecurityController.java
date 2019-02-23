@@ -1,11 +1,13 @@
 package org.hillel.hackatongreenteam.controller;
 
-import org.hillel.hackatongreenteam.controller.RestResponse;
 import org.hillel.hackatongreenteam.controller.dto.UserLoginInfo;
 import org.hillel.hackatongreenteam.model.User;
 import org.hillel.hackatongreenteam.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
@@ -14,23 +16,23 @@ public class SecurityController {
     private UserService userService;
 
     @Autowired
-    public void setUserService(UserService userService){
+    public void setUserService(UserService userService) {
         this.userService = userService;
     }
 
     @PostMapping(value = "/login")
-    public RestResponse login(@RequestBody UserLoginInfo loginInfo){
+    public RestResponse login(@RequestBody UserLoginInfo loginInfo) {
 
-        if ((loginInfo.getEmail() == null) || (loginInfo.getEmail().isEmpty())){
+        if ((loginInfo.getEmail() == null) || (loginInfo.getEmail().isEmpty())) {
             return new RestResponse(400, "Email is empty");
         }
 
-        if ((loginInfo.getPassword() == null) || (loginInfo.getPassword().isEmpty())){
+        if ((loginInfo.getPassword() == null) || (loginInfo.getPassword().isEmpty())) {
             return new RestResponse(400, "Password is empty");
         }
 
         User user = userService.findUserByUsername(loginInfo.getEmail());
-        if(user == null){
+        if (user == null) {
             return new RestResponse(404, String.format("User %s not found", loginInfo.getEmail()));
         }
 
@@ -42,25 +44,25 @@ public class SecurityController {
     }
 
     @PostMapping(value = "/register")
-    public RestResponse register(@RequestBody User user){
+    public RestResponse register(@RequestBody User user) {
 
-        if (user == null){
+        if (user == null) {
             return new RestResponse(400, "Incorrect user data structure");
         }
 
-        if ((user.getEmail() == null) || (user.getEmail().isEmpty())){
+        if ((user.getEmail() == null) || (user.getEmail().isEmpty())) {
             return new RestResponse(400, "Email is empty");
         }
 
-        if ((user.getName() == null) || (user.getName().isEmpty())){
+        if ((user.getName() == null) || (user.getName().isEmpty())) {
             return new RestResponse(400, "Name is empty");
         }
 
-        if ((user.getPassword() == null) || (user.getPassword().isEmpty())){
+        if ((user.getPassword() == null) || (user.getPassword().isEmpty())) {
             return new RestResponse(400, "Password is empty");
         }
 
-        if(userService.findUserByUsername(user.getEmail()) != null){
+        if (userService.findUserByUsername(user.getEmail()) != null) {
             return new RestResponse(400, String.format("User %s already exists", user.getEmail()));
         }
 

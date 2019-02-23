@@ -3,9 +3,9 @@ package org.hillel.hackatongreenteam.service;
 import org.hillel.hackatongreenteam.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import javax.transaction.Transactional;
 import java.util.HashSet;
@@ -16,7 +16,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private UserService userService;
 
     @Autowired
-    public void setUserService(UserService userService){
+    public void setUserService(UserService userService) {
         this.userService = userService;
     }
 
@@ -30,7 +30,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
 
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        if (user.isAdmin()){
+        if (user.isAdmin()) {
             grantedAuthorities.add(new SimpleGrantedAuthority("ADMIN"));
         } else {
             grantedAuthorities.add(new SimpleGrantedAuthority("USER"));
