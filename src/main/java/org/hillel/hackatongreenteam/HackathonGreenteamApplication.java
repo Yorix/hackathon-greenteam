@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HackatonGreenteamApplication {
+public class HackathonGreenteamApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HackatonGreenteamApplication.class, args);
+        SpringApplication.run(HackathonGreenteamApplication.class, args);
     }
 
 }
