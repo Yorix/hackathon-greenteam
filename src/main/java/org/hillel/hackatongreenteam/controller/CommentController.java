@@ -6,6 +6,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/comment")
 public class CommentController {
@@ -19,25 +21,48 @@ public class CommentController {
     }
 
     @GetMapping("{id}")
-    public Comment getOne(@PathVariable("id") int id) {
-        return commentService.read(id);
+    public RestResponse read(@PathVariable("id") int id) {
+        RestResponse response = new RestResponse();
+        Comment comment = commentService.read(id);
+        if (comment == null) {
+            response.setStatus(404);
+            response.setMessage(String.format("Comment %d not found", id));
+        } else {
+            response.setStatus(200);
+            response.setData(response);
+        }
+        return response;
+    }
+
+    @GetMapping
+    public List<Comment> readAll() {
+        return commentService.readAll();
     }
 
     @PostMapping
-    public Comment create(@RequestBody Comment comment) {
-        return commentService.save(comment);
+    public RestResponse create(@RequestBody Comment comment) {
+        RestResponse response = new RestResponse();
+        response.setStatus(201);
+        response.setMessage("Comment has created");
+        response.setData(commentService.save(comment));
+        return response;
     }
 
     @PutMapping("{id}")
-    public Comment update(@PathVariable("id") Comment commentFromDB,
-                          @RequestBody Comment comment) {
+    public RestResponse update(@PathVariable("id") Comment commentFromDB,
+                               @RequestBody Comment comment) {
         BeanUtils.copyProperties(comment, commentFromDB, "id");
-        return commentService.save(commentFromDB);
+
+        RestResponse response = new RestResponse();
+        response.setStatus(200);
+        response.setMessage("The comment has updated");
+        response.setData(commentService.save(commentFromDB));
+        return response;
     }
 
     @DeleteMapping("{id}")
-    public void delete(@PathVariable("id") Comment comment) {
-        commentService.delete(comment);
+    public void delete(@PathVariable("id") int id) {
+        commentService.delete(id);
     }
 
 }

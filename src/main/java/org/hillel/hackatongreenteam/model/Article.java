@@ -3,6 +3,7 @@ package org.hillel.hackatongreenteam.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -33,7 +34,7 @@ public class Article {
     @Column(name = "content")
     private String content;
 
-//    @Nullable
+    @Nullable
     @Column(name = "image_filename")
     private String imageFilename;
 

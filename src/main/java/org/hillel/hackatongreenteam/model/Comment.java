@@ -1,12 +1,11 @@
 package org.hillel.hackatongreenteam.model;
 
+import org.springframework.lang.Nullable;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-/**
- * Created by User on 23.02.2019.
- */
 @Entity
 @Table(name = "comments")
 public class Comment {
@@ -21,6 +20,11 @@ public class Comment {
     private Date dateCreated;
 
     @NotNull
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @NotNull
     @Column(name = "content")
     private String content;
 
@@ -29,10 +33,15 @@ public class Comment {
     @JoinColumn(name = "article_id")
     private Article article;
 
-    //    @Nullable
+    @Nullable
     @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "parent_comment_id")
     private Comment parentComment;
+
+    @PrePersist
+    protected void onCreate() {
+        dateCreated = new Date();
+    }
 
     public int getId() {
         return id;
@@ -48,6 +57,14 @@ public class Comment {
 
     public void setDateCreated(Date dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getContent() {

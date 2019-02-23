@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-02-23T18:24:55.701+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "Validation failed for classes [org.hillel.hackatongreenteam.model.Comment] during persist time for groups [javax.validation.groups.Default, ]\nList of constraint violations:[\n\tConstraintViolationImpl{interpolatedMessage='должно быть задано', propertyPath=article, rootBeanClass=class org.hillel.hackatongreenteam.model.Comment, messageTemplate='{javax.validation.constraints.NotNull.message}'}\n\tConstraintViolationImpl{interpolatedMessage='должно быть задано', propertyPath=user, rootBeanClass=class org.hillel.hackatongreenteam.model.Comment, messageTemplate='{javax.validation.constraints.NotNull.message}'}\n]",
+  "path": "/comment"
+}

@@ -14,5 +14,5 @@ public interface CommentService {
 
     List<Comment> readAll();
 
-    void delete(Comment comment);
+    void delete(int id);
 }
