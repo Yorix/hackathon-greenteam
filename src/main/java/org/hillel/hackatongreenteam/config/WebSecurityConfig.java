@@ -31,12 +31,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // Submit URL of login page.
                 .loginPage("/login")//
                 .defaultSuccessUrl("/")//
-                .usernameParameter("username")//
-                .passwordParameter("password")
+                //.usernameParameter("username")//
+                //.passwordParameter("password")
                 // Config for Logout Page
-                .and()
-                .logout()
-                .logoutUrl("/")
+                //.and()
+                //.logout()
+                //.logoutUrl("/")
         //.logoutSuccessUrl("/logoutSuccessful")
         ;
 

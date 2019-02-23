@@ -26,7 +26,6 @@ public class UserController {
 
     @PostMapping
     public User create(@RequestBody User user) {
-        //article.setCreationDate(LocalDateTime.now());
         return userRepository.save(user);
     }
 
