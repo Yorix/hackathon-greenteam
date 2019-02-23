@@ -1,22 +1,23 @@
 package org.hillel.hackatongreenteam.service;
 
+import org.hillel.hackatongreenteam.model.Article;
 import org.hillel.hackatongreenteam.model.Comment;
 import org.hillel.hackatongreenteam.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class CommentServiceImpl implements CommentService {
 
     private final CommentRepository commentRepository;
+    private final ArticleService articleService;
 
     @Autowired
-    public CommentServiceImpl(CommentRepository commentRepository) {
+    public CommentServiceImpl(CommentRepository commentRepository, ArticleService articleService) {
         this.commentRepository = commentRepository;
+        this.articleService = articleService;
     }
 
     @Override
@@ -31,11 +32,7 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public List<Comment> readAll(int articleId) {
-        return commentRepository
-                .findAll(Sort.by("dateCreated").descending())
-                .stream()
-                .filter(comment -> comment.getArticle().getId() == articleId)
-                .collect(Collectors.toList());
+        return commentRepository.findAllByArticleOrderByDateCreatedDesc(articleService.read(articleId));
     }
 
     @Override
