@@ -12,7 +12,7 @@ public interface CommentService {
 
     Comment read(int id);
 
-    List<Comment> readAll();
+    List<Comment> readAll(int articleId);
 
     void delete(int id);
 }

@@ -1,5 +1,6 @@
 package org.hillel.hackatongreenteam.controller;
 
+import org.hillel.hackatongreenteam.model.Article;
 import org.hillel.hackatongreenteam.model.Comment;
 import org.hillel.hackatongreenteam.service.CommentService;
 import org.springframework.beans.BeanUtils;
@@ -35,8 +36,8 @@ public class CommentController {
     }
 
     @GetMapping
-    public List<Comment> readAll() {
-        return commentService.readAll();
+    public List<Comment> readAll(@RequestBody int articleId) {
+        return commentService.readAll(articleId);
     }
 
     @PostMapping
