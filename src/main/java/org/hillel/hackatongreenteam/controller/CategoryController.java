@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/category", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
 public class CategoryController {
 
     private final CategoryRepository categoryRepository;
@@ -17,7 +17,7 @@ public class CategoryController {
         this.categoryRepository = categoryRepository;
     }
 
-    @PostMapping
+    @PostMapping(value = "/admin/category")
     public RestResponse create(@RequestBody Category category) {
         RestResponse response = new RestResponse();
         response.setStatus(201);
@@ -27,7 +27,7 @@ public class CategoryController {
         return response;
     }
 
-    @GetMapping
+    @GetMapping(value = "/category")
     public RestResponse list() {
         RestResponse response = new RestResponse();
         response.setStatus(200);

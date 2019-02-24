@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/article")
+@RequestMapping
 public class ArticleController {
 
     private final ArticleService articleService;
@@ -17,7 +17,7 @@ public class ArticleController {
         this.articleService = articleService;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/article/{id}")
     public RestResponse getOne(@PathVariable("id") int id) {
         RestResponse response = new RestResponse();
 
@@ -32,7 +32,7 @@ public class ArticleController {
 
         return response;
     }
-    @GetMapping
+    @GetMapping("/article")
     public RestResponse getAll() {
         RestResponse response = new RestResponse();
         response.setStatus(200);
@@ -41,7 +41,7 @@ public class ArticleController {
         return response;
     }
 
-    @PostMapping
+    @PostMapping("/admin/article")
     public RestResponse create(@RequestBody Article article) {
         RestResponse response = new RestResponse();
         response.setStatus(201);
@@ -51,7 +51,7 @@ public class ArticleController {
         return response;
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/admin/article/{id}")
     public RestResponse update(@PathVariable("id") Article articleFromDB,
                           @RequestBody Article article) {
         BeanUtils.copyProperties(article, articleFromDB, "id");
@@ -64,7 +64,7 @@ public class ArticleController {
         return response;
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/admin/article/{id}")
     public void delete(@PathVariable("id") int id) {
         articleService.delete(id);
     }

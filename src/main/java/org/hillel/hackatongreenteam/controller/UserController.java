@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping
 public class UserController {
 
     private final UserService userService;
@@ -17,7 +17,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("user/{id}")
     public RestResponse getOne(@PathVariable("id") int id) {
         RestResponse response = new RestResponse();
 
@@ -33,7 +33,7 @@ public class UserController {
     }
 
 
-    @PostMapping
+    @PostMapping("admin/user")
     public RestResponse create(@RequestBody User user) {
         RestResponse response = new RestResponse();
         response.setStatus(201);
@@ -42,7 +42,7 @@ public class UserController {
         return response;
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("admin/user/{id}")
     public RestResponse update(@PathVariable("id") User userFromDB,
                                @RequestBody User user) {
         BeanUtils.copyProperties(user, userFromDB, "id");
@@ -55,7 +55,7 @@ public class UserController {
         return response;
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("admin/user/{id}")
     public void delete(@PathVariable("id") int id) {
         userService.delete(id);
     }
