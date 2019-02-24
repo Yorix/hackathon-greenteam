@@ -3,22 +3,30 @@ package org.hillel.hackatongreenteam.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.AuthenticationEntryPoint;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private UserDetailsService userDetailsService;
+    private AuthenticationEntryPoint authenticationEntryPoint;
 
     @Autowired
     public void setUserDetailsService(UserDetailsService userDetailsService){
         this.userDetailsService = userDetailsService;
+    }
+
+    @Autowired
+    public void setAuthenticationEntryPoint(AuthenticationEntryPoint authenticationEntryPoint){
+        this.authenticationEntryPoint = authenticationEntryPoint;
     }
 
     @Override
@@ -34,7 +42,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/", "/login", "/register", "/logout").permitAll();
 
         // For ADMIN only.
-        //http.authorizeRequests().antMatchers("/admin/**").authenticated(); //.access("hasRole('ROLE_ADMIN')");
+        //http.authorizeRequests()
+                //.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
+                //.antMatchers(HttpMethod.POST,"/comment/").authenticated();
 
         // When the user has logged in as XX.
         // But access a page that requires role YY,
@@ -54,6 +64,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //.logoutUrl("/")
         //.logoutSuccessUrl("/logoutSuccessful")
         ;
+
+        // Use AuthenticationEntryPoint to authenticate user/password
+        http.httpBasic().authenticationEntryPoint(authenticationEntryPoint);
 
     }
 
