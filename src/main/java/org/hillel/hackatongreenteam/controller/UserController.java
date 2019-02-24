@@ -18,6 +18,7 @@ public class UserController {
         this.userService = userService;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @GetMapping("user/{id}")
     public RestResponse getOne(@PathVariable("id") int id) {
         RestResponse response = new RestResponse();
@@ -36,6 +37,7 @@ public class UserController {
     }
 
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @PostMapping("admin/user")
     public RestResponse create(@RequestBody User user) {
         RestResponse response = new RestResponse();
@@ -45,6 +47,7 @@ public class UserController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @PutMapping("admin/user/{id}")
     public RestResponse update(@PathVariable("id") User userFromDB,
                                @RequestBody User user) {
@@ -58,6 +61,7 @@ public class UserController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @DeleteMapping("admin/user/{id}")
     public void delete(@PathVariable("id") int id) {
         userService.delete(id);

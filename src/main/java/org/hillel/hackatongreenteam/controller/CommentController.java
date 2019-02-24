@@ -18,6 +18,7 @@ public class CommentController {
         this.commentService = commentService;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @GetMapping("{id}")
     public RestResponse read(@PathVariable("id") int id) {
         RestResponse response = new RestResponse();
@@ -32,6 +33,7 @@ public class CommentController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @GetMapping("/byArticle/{id}")
     public RestResponse readAll(@PathVariable("id")  int articleId) {
         RestResponse response = new RestResponse();
@@ -40,6 +42,7 @@ public class CommentController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @PostMapping
     public RestResponse create(@RequestBody Comment comment) {
         RestResponse response = new RestResponse();
@@ -49,6 +52,7 @@ public class CommentController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @PutMapping("{id}")
     public RestResponse update(@PathVariable("id") Comment commentFromDB,
                                @RequestBody Comment comment) {
@@ -61,6 +65,7 @@ public class CommentController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @DeleteMapping("{id}")
     public void delete(@PathVariable("id") int id) {
         commentService.delete(id);

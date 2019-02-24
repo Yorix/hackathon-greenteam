@@ -17,6 +17,7 @@ public class CategoryController {
         this.categoryRepository = categoryRepository;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @PostMapping(value = "/admin/category")
     public RestResponse create(@RequestBody Category category) {
         RestResponse response = new RestResponse();
@@ -27,6 +28,7 @@ public class CategoryController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @GetMapping(value = "/category")
     public RestResponse list() {
         RestResponse response = new RestResponse();

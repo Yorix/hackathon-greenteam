@@ -4,10 +4,7 @@ import org.hillel.hackatongreenteam.controller.dto.UserLoginInfo;
 import org.hillel.hackatongreenteam.model.User;
 import org.hillel.hackatongreenteam.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/")
@@ -20,6 +17,7 @@ public class SecurityController {
         this.userService = userService;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @PostMapping(value = "/login")
     public RestResponse login(@RequestBody UserLoginInfo loginInfo) {
 
@@ -43,6 +41,7 @@ public class SecurityController {
         return new RestResponse(200, "User logged in successfully");
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @PostMapping(value = "/register")
     public RestResponse register(@RequestBody User user) {
 

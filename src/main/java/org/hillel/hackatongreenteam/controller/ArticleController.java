@@ -17,6 +17,7 @@ public class ArticleController {
         this.articleService = articleService;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @GetMapping("/article/{id}")
     public RestResponse getOne(@PathVariable("id") int id) {
         RestResponse response = new RestResponse();
@@ -33,6 +34,7 @@ public class ArticleController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @GetMapping("/article")
     public RestResponse getAll() {
         RestResponse response = new RestResponse();
@@ -42,6 +44,7 @@ public class ArticleController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @GetMapping("/article/byCategory/{id}")
     public RestResponse getAllByCategory(@PathVariable("id") int categoryId) {
         RestResponse response = new RestResponse(200, null);
@@ -49,6 +52,7 @@ public class ArticleController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @PostMapping("/admin/article")
     public RestResponse create(@RequestBody Article article) {
         RestResponse response = new RestResponse();
@@ -59,6 +63,7 @@ public class ArticleController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @PutMapping("/admin/article/{id}")
     public RestResponse update(@PathVariable("id") Article articleFromDB,
                           @RequestBody Article article) {
@@ -72,6 +77,7 @@ public class ArticleController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://37.59.228.228")
     @DeleteMapping("/admin/article/{id}")
     public void delete(@PathVariable("id") int id) {
         articleService.delete(id);
