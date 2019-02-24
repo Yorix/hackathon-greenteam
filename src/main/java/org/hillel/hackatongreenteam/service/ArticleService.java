@@ -11,6 +11,8 @@ public interface ArticleService {
 
     List<Article> readAll();
 
+    List<Article> readAll(int categoryId);
+
     Article save(Article article);
 
     void delete(int id);

@@ -27,13 +27,13 @@ public class CommentController {
             response.setMessage(String.format("Comment %d not found", id));
         } else {
             response.setStatus(200);
-            response.setData(response);
+            response.setData(comment);
         }
         return response;
     }
 
-    @GetMapping
-    public RestResponse readAll(@RequestBody int articleId) {
+    @GetMapping("/byArticle/{id}")
+    public RestResponse readAll(@PathVariable("id")  int articleId) {
         RestResponse response = new RestResponse();
         response.setStatus(200);
         response.setData(commentService.readAll(articleId));

@@ -32,12 +32,20 @@ public class ArticleController {
 
         return response;
     }
+
     @GetMapping("/article")
     public RestResponse getAll() {
         RestResponse response = new RestResponse();
         response.setStatus(200);
         response.setData(articleService.readAll());
 
+        return response;
+    }
+
+    @GetMapping("/article/byCategory/{id}")
+    public RestResponse getAllByCategory(@PathVariable("id") int categoryId) {
+        RestResponse response = new RestResponse(200, null);
+        response.setData(articleService.readAll(categoryId));
         return response;
     }
 
