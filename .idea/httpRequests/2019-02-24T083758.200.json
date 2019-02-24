@@ -1,0 +1,10 @@
+{
+  "status": 200,
+  "message": null,
+  "data": {
+    "id": 3,
+    "name": "rrr",
+    "email": "aaaaaaaa@fff",
+    "avatarPictureFilename": "img2"
+  }
+}
