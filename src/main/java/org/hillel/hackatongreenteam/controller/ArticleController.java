@@ -41,7 +41,6 @@ public class ArticleController {
         return response;
     }
 
-
     @PostMapping
     public RestResponse create(@RequestBody Article article) {
         RestResponse response = new RestResponse();

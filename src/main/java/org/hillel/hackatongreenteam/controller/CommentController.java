@@ -34,8 +34,8 @@ public class CommentController {
         return response;
     }
 
-    @GetMapping("byArticle/{id}")
-    public List<Comment> readAll(@PathVariable("id")  int articleId) {
+    @GetMapping
+    public List<Comment> readAll(@RequestBody int articleId) {
         return commentService.readAll(articleId);
     }
 

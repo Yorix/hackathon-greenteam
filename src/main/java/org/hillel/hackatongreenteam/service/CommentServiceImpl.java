@@ -1,6 +1,5 @@
 package org.hillel.hackatongreenteam.service;
 
-import org.hillel.hackatongreenteam.model.Article;
 import org.hillel.hackatongreenteam.model.Comment;
 import org.hillel.hackatongreenteam.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
