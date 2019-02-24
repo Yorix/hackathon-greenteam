@@ -1,5 +1,6 @@
 package org.hillel.hackatongreenteam.model;
 
+import org.hillel.hackatongreenteam.controller.dto.UserDto;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
@@ -59,8 +60,8 @@ public class Comment {
         this.dateCreated = dateCreated;
     }
 
-    public User getUser() {
-        return user;
+    public UserDto getUser() {
+        return new UserDto(user.getId(), user.getName(), user.getEmail(), user.getAvatarPictureFilename());
     }
 
     public void setUser(User user) {

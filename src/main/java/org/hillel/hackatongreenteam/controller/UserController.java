@@ -1,5 +1,6 @@
 package org.hillel.hackatongreenteam.controller;
 
+import org.hillel.hackatongreenteam.controller.dto.UserDto;
 import org.hillel.hackatongreenteam.model.User;
 import org.hillel.hackatongreenteam.service.UserService;
 import org.springframework.beans.BeanUtils;
@@ -22,12 +23,14 @@ public class UserController {
         RestResponse response = new RestResponse();
 
         User user = userService.read(id);
+
         if (user == null) {
             response.setStatus(404);
             response.setMessage(String.format("User %d not found", id));
         } else {
+            UserDto userDto = new UserDto(user.getId(), user.getName(), user.getEmail(), user.getAvatarPictureFilename());
             response.setStatus(200);
-            response.setData(user);
+            response.setData(userDto);
         }
         return response;
     }

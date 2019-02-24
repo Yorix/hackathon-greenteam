@@ -1,3 +1,337 @@
+GET http://localhost:8080/user/3
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083758.200.json
+
+###
+
+GET http://localhost:8080/user/2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083743.500.json
+
+###
+
+GET http://localhost:8080/user/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083738.200.json
+
+###
+
+GET http://localhost:8080/comment/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083727.200.json
+
+###
+
+GET http://localhost:8080/comment/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083613.200.json
+
+###
+
+GET http://localhost:8080/user/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083602.200.json
+
+###
+
+GET http://37.59.228.228:8080/user/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083543.200.json
+
+###
+
+GET http://37.59.228.228:8080/user/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083530.200.json
+
+###
+
+GET http://localhost:8080/comment/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083521.200.json
+
+###
+
+GET http://37.59.228.228:8080/user/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083419.200.json
+
+###
+
+GET http://localhost:8080/comment/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083408.200.json
+
+###
+
+GET http://localhost:8080/comment/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083045.200.json
+
+###
+
+GET http://localhost:8080/comment
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083032.405.json
+
+###
+
+GET http://localhost:8080/user/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083012.200.json
+
+###
+
+GET http://localhost:8080/user/2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T083008.500.json
+
+###
+
+GET http://localhost:8080/user/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T082935.200.json
+
+###
+
+GET http://37.59.228.228:8080/user/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T082235.200.json
+
+###
+
+GET http://37.59.228.228:8080/user/2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T082115.200.json
+
+###
+
+POST http://37.59.228.228:8080/admin/user
+Content-Type: application/json
+
+{
+  "name": "user2",
+  "email": "email@mail.ail",
+  "password": "pw",
+  "avatar_picture_filename": "avatar",
+  "is_admin": "true"
+}
+
+<> 2019-02-24T082101.200.json
+
+###
+
+GET http://37.59.228.228:8080/user/2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T081805.500.json
+
+###
+
+GET http://37.59.228.228:8080/user/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T081759.200.json
+
+###
+
+GET http://37.59.228.228:8080/user
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T081746.404.json
+
+###
+
+GET http://37.59.228.228:8080/article
+Content-Type: application/json
+
+<> 2019-02-24T080327.200.json
+
+###
+
+GET http://37.59.228.228:8080/article
+Content-Type: application/json
+
+<> 2019-02-24T080239.200.json
+
+###
+
+DELETE http://37.59.228.228:8080/admin/article/3
+Content-Type: application/json
+
+###
+
+GET http://37.59.228.228:8080/article
+Content-Type: application/json
+
+<> 2019-02-24T080226.200.json
+
+###
+
+POST http://37.59.228.228:8080/admin/article
+Content-Type: application/json
+
+{
+  "title": "title1",
+  "content": "content1",
+  "image_filename": "img",
+  "category": {"id": 1}
+}
+
+<> 2019-02-24T080118.200.json
+
+###
+
+GET http://37.59.228.228:8080/article
+Content-Type: application/json
+
+<> 2019-02-24T075745.200.json
+
+###
+
+DELETE http://37.59.228.228:8080/admin/article/3
+Content-Type: application/json
+
+###
+
+GET http://37.59.228.228:8080/article
+Content-Type: application/json
+
+<> 2019-02-24T075531.200.json
+
+###
+
+DELETE http://37.59.228.228:8080/admin/article/3
+Content-Type: application/json
+
+###
+
+GET http://37.59.228.228:8080/article
+Content-Type: application/json
+
+<> 2019-02-24T075335.200.json
+
+###
+
+POST http://37.59.228.228:8080/admin/article
+Content-Type: application/json
+
+{
+  "title": "title1",
+  "content": "content1",
+  "image_filename": "img",
+  "category": {"id": 1}
+}
+
+<> 2019-02-24T071059.200.json
+
+###
+
+POST http://37.59.228.228:8080/article
+Content-Type: application/json
+
+{
+  "title": "title1",
+  "content": "content1",
+  "image_filename": "img",
+  "category": {"id": 1}
+}
+
+<> 2019-02-24T071050.405.json
+
+###
+
+GET http://37.59.228.228:8080/user/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T065206.200.json
+
+###
+
+GET http://37.59.228.228:8080/article
+
+<> 2019-02-24T065150.200.json
+
+###
+
+GET http://37.59.228.228:8080/user/2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T064934.500.json
+
+###
+
+GET http://37.59.228.228:8080/user/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T064928.200.json
+
+###
+
+GET http://37.59.228.228:8080/user/2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T064919.500.json
+
+###
+
+GET http://37.59.228.228:8080/user/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T064909.200.json
+
+###
+
+GET http://37.59.228.228:8080/category/
+
+<> 2019-02-24T064415.200.json
+
+###
+
 GET http://localhost:8080/user/1
 Accept: */*
 Cache-Control: no-cache
@@ -67,467 +401,6 @@ Accept: */*
 Cache-Control: no-cache
 
 <> 2019-02-24T060715.500.json
-
-###
-
-GET http://localhost:8080/article
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-02-24T060709.500.json
-
-###
-
-GET http://localhost:8080/article/byCategory/1
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-02-24T060704.200.json
-
-###
-
-GET http://localhost:8080/article/byCategory/1
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-02-24T060237.500.json
-
-###
-
-GET http://localhost:8080/article
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-02-24T060202.500.json
-
-###
-
-GET https://hackathon-greenteam.herokuapp.com/category/
-Accept: application/json
-Cache-Control: no-cache
-
-<> 2019-02-24T124308.503.html
-
-###
-
-GET https://hackathon-greenteam.herokuapp.com/category/
-Accept: application/json
-Cache-Control: no-cache
-
-<> 2019-02-24T124224.503.html
-
-###
-
-GET https://hackathon-greenteam.herokuapp.com/category/
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-02-24T124142.503.html
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-1
-
-<> 2019-02-23T110439.200.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-2
-
-<> 2019-02-23T110428.200.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-2
-
-<> 2019-02-23T110420.200.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-2
-
-<> 2019-02-23T110356.200.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-1
-
-<> 2019-02-23T110348.200.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-1
-
-<> 2019-02-23T110216.200.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-2
-
-<> 2019-02-23T110212.200.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-1
-
-<> 2019-02-23T110203.200.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "title": "Article 1",
-  "content": "CONTENT",
-  "category": {"id": 1}
-}
-
-<> 2019-02-23T105815.200.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-02-23T105558.400.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-02-23T103958.200.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-02-23T103117.200.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-02-23T102836.500.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-02-23T095539.200.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-02-23T095259.500.json
-
-###
-
-GET http://localhost:8080/comment
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-02-23T095232.500.json
-
-###
-
-GET http://localhost:8080/comment
-
-<> 2019-02-23T084518.200.json
-
-###
-
-GET http://localhost:8080/comment
-
-<> 2019-02-23T084338.500.json
-
-###
-
-GET http://localhost:8080/comment
-
-<> 2019-02-23T084104.500.json
-
-###
-
-POST http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "user": {"id": "1"},
-  "content": "Content",
-  "article": {"id": "1"},
-  "parentComment": {"id": "1"}
-}
-
-<> 2019-02-23T084058.200.json
-
-###
-
-POST http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "user": {"id": "1"},
-  "content": "Content",
-  "article": {"id": "1"},
-  "parentComment": {"id": "1"}
-}
-
-<> 2019-02-23T084052.200.json
-
-###
-
-GET http://localhost:8080/comment
-
-<> 2019-02-23T083312.500.json
-
-###
-
-POST http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "user": {"id": "1"},
-  "content": "Content",
-  "article": {"id": "1"},
-  "parentComment": {"id": "1"}
-}
-
-<> 2019-02-23T083156.200.json
-
-###
-
-POST http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "user": {"id": "1"},
-  "content": "Content",
-  "article": {"id": "1"},
-  "parentComment": {"id": "1"}
-}
-
-<> 2019-02-23T083123.200.json
-
-###
-
-POST http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "user_id": {"id": "1"},
-  "content": "Content",
-  "article_id": {"id": "1"},
-  "parent_comment_id": {"id": "1"}
-}
-
-<> 2019-02-23T082455.500.json
-
-###
-
-POST http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "user_id": {"id": "1"},
-  "content": "Content",
-  "article_id": {"id": "1"},
-  "parent_comment_id": {"id": "1"}
-}
-
-<> 2019-02-23T082220.500.json
-
-###
-
-POST http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "user_id": {"id": 1},
-  "content": "Content",
-  "article_id": {"id": 1},
-  "parent_comment_id": {"id": 1}
-}
-
-<> 2019-02-23T082016.500.json
-
-###
-
-POST http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "user_id": {"id": 1},
-  "content": "Content",
-  "article_id": {"id": 1},
-  "parent_comment_id": {"id": 1}
-}
-
-<> 2019-02-23T082013.500.json
-
-###
-
-POST http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "user_id": {"id": 1},
-  "content": "Content",
-  "article_id": {"id": 1},
-  "parent_comment_id": {"id": 1}
-}
-
-<> 2019-02-23T081854.500.json
-
-###
-
-POST http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "user_id": {"id": 1},
-  "content": "Content",
-  "article_id": {"id": 1},
-  "parent_comment_id": {"id": 1}
-}
-
-<> 2019-02-23T081457.500.json
-
-###
-
-POST http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "user_id": {"id": 1},
-  "content": "Content",
-  "article_id": {"id": 1},
-  "parent_comment_id": {"id": 1}
-}
-
-<> 2019-02-23T081440.500.json
-
-###
-
-POST http://localhost:8080/article
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "title": "TITLE",
-  "content": "Content",
-  "article_id": "1"
-}
-
-<> 2019-02-23T075816.500.json
-
-###
-
-POST http://localhost:8080/article
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "title": "TITLE",
-  "content": "Content",
-  "article_id": "1",
-  "parent_comment_id": "1"
-}
-
-<> 2019-02-23T075810.500.json
-
-###
-
-POST http://localhost:8080/comment
-Accept: */*
-Content-Type: application/json
-Cache-Control: no-cache
-
-{
-  "content": "CONTENT",
-  "article_id": "1",
-  "parent_comment_id": "1"
-}
-
-<> 2019-02-23T075202.500.json
 
 ###
 
