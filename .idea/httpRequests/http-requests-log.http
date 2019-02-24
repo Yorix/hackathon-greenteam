@@ -1,3 +1,27 @@
+GET https://hackathon-greenteam.herokuapp.com/category/
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-02-24T124308.503.html
+
+###
+
+GET https://hackathon-greenteam.herokuapp.com/category/
+Accept: application/json
+Cache-Control: no-cache
+
+<> 2019-02-24T124224.503.html
+
+###
+
+GET https://hackathon-greenteam.herokuapp.com/category/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-24T124142.503.html
+
+###
+
 GET http://localhost:8080/comment
 Accept: */*
 Content-Type: application/json
