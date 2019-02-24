@@ -1,4 +1,4 @@
-package org.hillel.hackatongreenteam.service;
+package org.hillel.hackatongreenteam.secutity;
 
 public interface SecurityService {
 

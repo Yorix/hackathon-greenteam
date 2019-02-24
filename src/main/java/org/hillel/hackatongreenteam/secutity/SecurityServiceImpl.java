@@ -1,4 +1,4 @@
-package org.hillel.hackatongreenteam.service;
+package org.hillel.hackatongreenteam.secutity;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

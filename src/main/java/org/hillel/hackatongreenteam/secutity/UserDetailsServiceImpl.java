@@ -1,6 +1,7 @@
-package org.hillel.hackatongreenteam.service;
+package org.hillel.hackatongreenteam.secutity;
 
 import org.hillel.hackatongreenteam.model.User;
+import org.hillel.hackatongreenteam.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
