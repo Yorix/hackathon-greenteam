@@ -6,8 +6,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/comment")
 public class CommentController {
@@ -35,8 +33,11 @@ public class CommentController {
     }
 
     @GetMapping
-    public List<Comment> readAll(@RequestBody int articleId) {
-        return commentService.readAll(articleId);
+    public RestResponse readAll(@RequestBody int articleId) {
+        RestResponse response = new RestResponse();
+        response.setStatus(200);
+        response.setData(commentService.readAll(articleId));
+        return response;
     }
 
     @PostMapping
